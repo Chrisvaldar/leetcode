@@ -1,0 +1,12 @@
+# 55. Jump Game
+class Solution:
+    def canJump(self, nums: List[int]) -> bool:
+        goal = len(nums) - 1
+        for i in range(len(nums) - 2, -1, -1):
+            if goal - i <= nums[i]:
+                goal = i
+        return not goal
+
+
+# Time Complexity: O(n)
+# Space Complexity: O(1)
